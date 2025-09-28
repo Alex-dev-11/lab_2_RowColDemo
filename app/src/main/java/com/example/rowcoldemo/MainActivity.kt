@@ -22,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.compose.ui.layout.FirstBaseline
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,13 +52,24 @@ class MainActivity : ComponentActivity() {
 ном расстоянии друг от друга, включая половину расстояния до первого
 и после последнего ребёнка.*/
 
+// Для дочерних элементов row, col доступны align, alignBy(FirstBaseline, LastBaseline), paddingFrom, alignByBaseline
+
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(horizontalArrangement = Arrangement.SpaceEvenly,
-        modifier = modifier.size(width = 400.dp, height = 200.dp)) {
-        TextCell("1")
-        TextCell("2")
-        TextCell("3")
+    Row {
+        Text(
+            text = "Large Text\n\nMore Text",
+            Modifier.alignBy(FirstBaseline),
+            fontSize = 40.sp,
+            fontWeight = FontWeight.Bold
+        )
+        Text(
+            text = "Small Text",
+            modifier = Modifier.paddingFrom(
+                alignmentLine = FirstBaseline, before = 80.dp, after = 0.dp),
+            fontSize = 32.sp,
+            fontWeight = FontWeight.Bold
+        )
     }
 }
 
