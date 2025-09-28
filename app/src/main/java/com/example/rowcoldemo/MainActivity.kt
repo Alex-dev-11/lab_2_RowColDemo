@@ -15,6 +15,7 @@ import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -41,9 +42,19 @@ class MainActivity : ComponentActivity() {
 //них элементов вдоль той же оси, что и контейнер (т. е. по горизонтали для строк и по вер
 //тикали для столбцов)
 
+/*Arrangement.SpaceEvenly – дочерние элементы располагаются на рав
+ном расстоянии друг от друга, включая пространство перед первым и
+после последнего.
+•Arrangement.SpaceBetween - дочерние элементы располагаются на
+равном расстоянии друг от друга, без выделения пространства перед
+первым и после последнего.
+•Arrangement.SpaceAround - дочерние элементы располагаются на рав
+ном расстоянии друг от друга, включая половину расстояния до первого
+и после последнего ребёнка.*/
+
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(horizontalArrangement = Arrangement.End,
+    Row(horizontalArrangement = Arrangement.SpaceEvenly,
         modifier = modifier.size(width = 400.dp, height = 200.dp)) {
         TextCell("1")
         TextCell("2")
