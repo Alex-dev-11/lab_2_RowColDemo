@@ -35,10 +35,15 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+// Выравнивание Alignment для row производится вертикальное, для column горизонтальное
+
+// Arragnment В отличие от настроек выравнивания, расположение определяет позиционирование дочер
+//них элементов вдоль той же оси, что и контейнер (т. е. по горизонтали для строк и по вер
+//тикали для столбцов)
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Row(verticalAlignment = Alignment.CenterVertically,
+    Row(horizontalArrangement = Arrangement.End,
         modifier = modifier.size(width = 400.dp, height = 200.dp)) {
         TextCell("1")
         TextCell("2")
