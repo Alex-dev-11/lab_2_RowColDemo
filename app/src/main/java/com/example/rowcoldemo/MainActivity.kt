@@ -15,6 +15,7 @@ import com.example.rowcoldemo.ui.theme.RowColDemoTheme
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -37,31 +38,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    Column(modifier) {
-        Row {
-            Column {
-                TextCell("1")
-                TextCell("2")
-                TextCell("3")
-            }
-
-            Column {
-                TextCell("4")
-                TextCell("5")
-                TextCell("6")
-            }
-
-            Column {
-                TextCell("7")
-                TextCell("8")
-            }
-        }
-
-        Row {
-            TextCell("9")
-            TextCell("10")
-            TextCell("11")
-        }
+    Column(horizontalAlignment = Alignment.End,
+        modifier = modifier.width(250.dp)) {
+        TextCell("1")
+        TextCell("2")
+        TextCell("3")
     }
 }
 
